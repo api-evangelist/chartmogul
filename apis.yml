@@ -1,0 +1,68 @@
+aid: chartmogul
+name: ChartMogul
+description: >-
+  ChartMogul is a subscription analytics platform for SaaS companies that
+  unifies billing data, customer information, and revenue analytics into one
+  real-time view of MRR, churn, LTV, cohorts, and growth trends. The
+  ChartMogul REST API provides programmatic access to import customers,
+  subscriptions, invoices, transactions, and plans, and to read metrics,
+  customer segments, and forecasts.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Subscription Analytics
+  - SaaS Metrics
+  - Revenue Analytics
+  - MRR
+  - Churn
+  - Cohorts
+  - Billing
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: chartmogul:rest-api
+    name: ChartMogul REST API
+    description: >-
+      REST API for ChartMogul providing endpoints for importing customers,
+      subscriptions, plans, invoices, and transactions, plus reading SaaS
+      metrics (MRR, ARR, ARPA, churn, LTV), customer attributes, segments,
+      and forecasts. All requests are over HTTPS and authenticate via HTTP
+      Basic Auth using an API key as the username.
+    humanURL: https://dev.chartmogul.com/docs/introduction
+    baseURL: https://api.chartmogul.com
+    tags:
+      - Subscription Analytics
+      - SaaS Metrics
+      - Import API
+      - Metrics API
+      - Customers
+      - Subscriptions
+      - Invoices
+      - Basic Auth
+    properties:
+      - type: Documentation
+        url: https://dev.chartmogul.com/docs/introduction
+      - type: Authentication
+        url: https://dev.chartmogul.com/docs/authentication
+      - type: Getting Started
+        url: https://help.chartmogul.com/hc/en-us/articles/207413269-Getting-started-with-our-API
+      - type: GitHub SDK
+        url: https://github.com/chartmogul
+
+common:
+  - type: Website
+    url: https://chartmogul.com
+  - type: Documentation
+    url: https://dev.chartmogul.com/docs/introduction
+  - type: Pricing
+    url: https://chartmogul.com/pricing
+  - type: Sign Up
+    url: https://app.chartmogul.com/sign_up
+  - type: GitHub Organization
+    url: https://github.com/chartmogul
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

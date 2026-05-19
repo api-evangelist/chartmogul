@@ -20,7 +20,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
   - aid: chartmogul:rest-api
@@ -63,6 +63,9 @@ common:
     url: https://app.chartmogul.com/sign_up
   - type: GitHubOrganization
     url: https://github.com/chartmogul
+  - name: MCP Server
+    url: https://github.com/chartmogul/chartmogul-mcp-server
+    type: MCPServer
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

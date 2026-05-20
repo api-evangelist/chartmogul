@@ -53,6 +53,8 @@ apis:
         url: https://github.com/chartmogul
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/chartmogul
   - type: Website
     url: https://chartmogul.com
   - type: Documentation

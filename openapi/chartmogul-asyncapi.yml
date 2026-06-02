@@ -1,0 +1,176 @@
+asyncapi: '2.6.0'
+info:
+  title: ChartMogul Webhooks AsyncAPI
+  version: '1.0.0'
+  description: >-
+    AsyncAPI definition for the ChartMogul webhooks (destinations) surface.
+
+    ChartMogul publishes outbound webhook notifications to a user-configured
+    HTTP endpoint when MRR-impacting movements are recorded in the account.
+    Only a single event type is documented: `mrr_movement`. The payload
+    captures the customer, subscription, and the monetary movement in both
+    the account currency and the invoice currency.
+
+    This document models only what is explicitly documented at
+    https://dev.chartmogul.com/docs/destinations/webhooks. ChartMogul does not
+    publish a webhook signing scheme, HTTP method, or delivery/retry contract
+    in that page; consumers should treat the transport as POST of a JSON body
+    and confirm operational details with ChartMogul.
+  contact:
+    name: ChartMogul Developer Documentation
+    url: https://dev.chartmogul.com/docs/destinations/webhooks
+  license:
+    name: Proprietary
+    url: https://chartmogul.com/legal
+
+defaultContentType: application/json
+
+servers:
+  subscriber:
+    url: '{webhookUrl}'
+    protocol: https
+    description: >-
+      Subscriber-hosted HTTPS endpoint registered in the ChartMogul UI as a
+      webhook destination. ChartMogul POSTs JSON event bodies to this URL.
+    variables:
+      webhookUrl:
+        description: Fully qualified subscriber URL configured in ChartMogul.
+        default: https://example.com/chartmogul/webhooks
+
+channels:
+  mrr-movement:
+    description: >-
+      Channel representing the documented `mrr_movement` webhook event. A
+      message is published whenever a customer-level MRR movement is recorded
+      (new business, churn, expansion, contraction, or reactivation).
+    subscribe:
+      summary: Receive ChartMogul MRR movement events.
+      operationId: receiveMrrMovement
+      message:
+        $ref: '#/components/messages/MrrMovement'
+
+components:
+  messages:
+    MrrMovement:
+      name: mrr_movement
+      title: MRR Movement
+      summary: Customer-level MRR movement notification.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/MrrMovementPayload'
+
+  schemas:
+    MrrMovementPayload:
+      type: object
+      description: >-
+        Payload delivered for every ChartMogul `mrr_movement` webhook
+        activity. Field names and types reflect the ChartMogul documentation.
+      properties:
+        date:
+          type: string
+          description: Timestamp of the MRR movement.
+        type:
+          type: string
+          description: Activity type. The value is always `mrr_movement`.
+          enum:
+            - mrr_movement
+        description:
+          type: string
+          description: Human-readable description of the movement.
+        movement_type:
+          type: string
+          description: Category of the MRR movement.
+          enum:
+            - new_biz
+            - churn
+            - expansion
+            - contraction
+            - reactivation
+        account_currency:
+          type: string
+          description: ISO currency code of the ChartMogul account.
+        invoice_currency:
+          type: string
+          description: ISO currency code of the underlying invoice.
+        account_currency_symbol:
+          type: string
+          description: Symbol of the account currency.
+        invoice_currency_symbol:
+          type: string
+          description: Symbol of the invoice currency.
+        movement_amount_in_cent:
+          type: integer
+          description: Movement amount, expressed in cents.
+        mrr_movement_in_account_currency:
+          type: integer
+          description: MRR movement expressed in the account currency, in cents.
+        mrr_movement_in_invoice_currency:
+          type: integer
+          description: MRR movement expressed in the invoice currency, in cents.
+        customer:
+          $ref: '#/components/schemas/Customer'
+        subscription:
+          $ref: '#/components/schemas/Subscription'
+
+    Customer:
+      type: object
+      description: Customer associated with the MRR movement.
+      properties:
+        name:
+          type: string
+          description: Display name of the customer.
+        uuid:
+          type: string
+          description: ChartMogul customer UUID.
+        email:
+          type: string
+          description: Customer email address.
+        status:
+          type: string
+          description: Lifecycle status of the customer.
+          enum:
+            - New Lead
+            - Working Lead
+            - Qualified Lead
+            - Unqualified Lead
+            - Active
+            - Past Due
+            - Cancelled
+        company:
+          type: string
+          description: Company name associated with the customer.
+        currency:
+          type: string
+          description: ISO currency code used for the customer.
+        current_arr:
+          type: integer
+          description: Current ARR of the customer, in cents.
+        current_mrr:
+          type: integer
+          description: Current MRR of the customer, in cents.
+        external_id:
+          type: string
+          description: Primary external identifier for the customer.
+        external_ids:
+          type: array
+          description: All known external identifiers for the customer.
+          items:
+            type: string
+        currency_symbol:
+          type: string
+          description: Symbol for the customer currency.
+        data_source_uuid:
+          type: string
+          description: UUID of the data source the customer belongs to.
+        custom_attributes:
+          type: object
+          description: Custom attributes attached to the customer in ChartMogul.
+          additionalProperties: true
+
+    Subscription:
+      type: object
+      description: Subscription associated with the MRR movement.
+      properties:
+        external_id:
+          type: string
+          description: External identifier of the subscription.

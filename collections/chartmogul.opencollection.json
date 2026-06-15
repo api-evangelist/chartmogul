@@ -1,0 +1,517 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ChartMogul REST API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/account"
+          },
+          "docs": "Retrieve account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/customers",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List customers"
+        },
+        {
+          "info": {
+            "name": "Create a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.chartmogul.com/v1/customers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a customer"
+        },
+        {
+          "info": {
+            "name": "Retrieve a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/customers/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a customer"
+        },
+        {
+          "info": {
+            "name": "Update a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.chartmogul.com/v1/customers/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a customer"
+        },
+        {
+          "info": {
+            "name": "Delete a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.chartmogul.com/v1/customers/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a customer"
+        },
+        {
+          "info": {
+            "name": "List customers by email",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/customers/email/:email",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List customers by email"
+        },
+        {
+          "info": {
+            "name": "List customer activities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/customers/:uuid/activities",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List customer activities"
+        },
+        {
+          "info": {
+            "name": "List customer invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/customers/:uuid/invoices",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List customer invoices"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List customer subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/customers/:uuid/subscriptions",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List customer subscriptions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/invoices"
+          },
+          "docs": "List invoices"
+        },
+        {
+          "info": {
+            "name": "Import invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.chartmogul.com/v1/invoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import invoices"
+        },
+        {
+          "info": {
+            "name": "Retrieve an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/invoices/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an invoice"
+        },
+        {
+          "info": {
+            "name": "Update an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.chartmogul.com/v1/invoices/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an invoice"
+        },
+        {
+          "info": {
+            "name": "Delete an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.chartmogul.com/v1/invoices/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an invoice"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Plans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/plans"
+          },
+          "docs": "List plans"
+        },
+        {
+          "info": {
+            "name": "Create a plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.chartmogul.com/v1/plans",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a plan"
+        },
+        {
+          "info": {
+            "name": "Retrieve a plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/plans/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a plan"
+        },
+        {
+          "info": {
+            "name": "Update a plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.chartmogul.com/v1/plans/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a plan"
+        },
+        {
+          "info": {
+            "name": "Delete a plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.chartmogul.com/v1/plans/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a plan"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all key metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/all",
+            "params": [
+              {
+                "name": "start-date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end-date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "interval",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all key metrics"
+        },
+        {
+          "info": {
+            "name": "Retrieve MRR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/mrr"
+          },
+          "docs": "Retrieve MRR"
+        },
+        {
+          "info": {
+            "name": "Retrieve ARR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/arr"
+          },
+          "docs": "Retrieve ARR"
+        },
+        {
+          "info": {
+            "name": "Retrieve ARPA",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/arpa"
+          },
+          "docs": "Retrieve ARPA"
+        },
+        {
+          "info": {
+            "name": "Customer count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/customer-count"
+          },
+          "docs": "Customer count"
+        },
+        {
+          "info": {
+            "name": "Customer churn rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/churn-rate"
+          },
+          "docs": "Customer churn rate"
+        },
+        {
+          "info": {
+            "name": "MRR churn rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/mrr-churn-rate"
+          },
+          "docs": "MRR churn rate"
+        },
+        {
+          "info": {
+            "name": "Lifetime value",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/ltv"
+          },
+          "docs": "Lifetime value"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,2605 @@
+{
+  "item": [
+    {
+      "id": "ad2ee3a6-c852-459f-aa82-341dd1fc2a07",
+      "name": "Account",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d9ba7cc-9d11-4bd4-a5da-af8256231456",
+          "name": "Retrieve account",
+          "request": {
+            "name": "Retrieve account",
+            "description": {},
+            "url": {
+              "path": [
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "540ebc45-a2b5-4556-9941-d3a892cfa7d9",
+              "name": "Account details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"currency\": \"string\",\n  \"time_zone\": \"string\",\n  \"week_start_on\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "57a71b5c-7f5b-4952-aa74-0a43ed4e693f",
+      "name": "Customers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75e84350-623d-43b3-a808-70d67abb222a",
+          "name": "List customers",
+          "request": {
+            "name": "List customers",
+            "description": {},
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b6a1860-6e04-4f17-a5d7-562530750ff4",
+              "name": "Paged list of customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"data_source_uuid\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"Rz6aEeeYeX@eYBoTNsFwftFjHgsdfZdCtMqbfRUq.hlrw\",\n      \"company\": \"string\",\n      \"country\": \"string\",\n      \"city\": \"string\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"data_source_uuid\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"g79hUz@yluhZJcZLGDVDrWnPPghNHvsaPDwOk.aat\",\n      \"company\": \"string\",\n      \"country\": \"string\",\n      \"city\": \"string\"\n    }\n  ],\n  \"has_more\": false,\n  \"per_page\": 3140,\n  \"page\": 3785\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edcf4e4d-97c1-4054-85de-1ee75b3b78af",
+          "name": "Create a customer",
+          "request": {
+            "name": "Create a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uuid\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<email>\",\n  \"company\": \"<string>\",\n  \"country\": \"<string>\",\n  \"city\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "40f300b3-5199-4c3c-8380-33c4b3dff419",
+              "name": "Customer created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuid\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<email>\",\n  \"company\": \"<string>\",\n  \"country\": \"<string>\",\n  \"city\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"external_id\": \"string\",\n  \"data_source_uuid\": \"string\",\n  \"name\": \"string\",\n  \"email\": \"KIhT@hWfmM.lfi\",\n  \"company\": \"string\",\n  \"country\": \"string\",\n  \"city\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18943c97-69e5-4f04-b8f5-6b89f58f0274",
+          "name": "Retrieve a customer",
+          "request": {
+            "name": "Retrieve a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05dee5ec-12cb-4c1c-b2d9-2d9931aaeb2a",
+              "name": "Customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"external_id\": \"string\",\n  \"data_source_uuid\": \"string\",\n  \"name\": \"string\",\n  \"email\": \"KIhT@hWfmM.lfi\",\n  \"company\": \"string\",\n  \"country\": \"string\",\n  \"city\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0fe7bfd4-ab31-447d-b9e6-5db1b9670fb3",
+          "name": "Update a customer",
+          "request": {
+            "name": "Update a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uuid\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<email>\",\n  \"company\": \"<string>\",\n  \"country\": \"<string>\",\n  \"city\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ad746d7e-8c23-44b2-83ef-c9d65823833d",
+              "name": "Updated customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuid\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<email>\",\n  \"company\": \"<string>\",\n  \"country\": \"<string>\",\n  \"city\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"external_id\": \"string\",\n  \"data_source_uuid\": \"string\",\n  \"name\": \"string\",\n  \"email\": \"KIhT@hWfmM.lfi\",\n  \"company\": \"string\",\n  \"country\": \"string\",\n  \"city\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9626c656-59ce-4707-8015-1f18dba61919",
+          "name": "Delete a customer",
+          "request": {
+            "name": "Delete a customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4ad85e6-c432-48be-a0bb-92203a49c866",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23165cf8-13ad-4698-9108-4bfbd0e45630",
+          "name": "List customers by email",
+          "request": {
+            "name": "List customers by email",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                "email",
+                ":email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<email>",
+                  "key": "email",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54850425-ade4-49ca-9ba6-90378f3df189",
+              "name": "Customers matching the email",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    "email",
+                    ":email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<email>",
+                      "key": "email",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"data_source_uuid\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"Rz6aEeeYeX@eYBoTNsFwftFjHgsdfZdCtMqbfRUq.hlrw\",\n      \"company\": \"string\",\n      \"country\": \"string\",\n      \"city\": \"string\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"data_source_uuid\": \"string\",\n      \"name\": \"string\",\n      \"email\": \"g79hUz@yluhZJcZLGDVDrWnPPghNHvsaPDwOk.aat\",\n      \"company\": \"string\",\n      \"country\": \"string\",\n      \"city\": \"string\"\n    }\n  ],\n  \"has_more\": false,\n  \"per_page\": 3140,\n  \"page\": 3785\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "606dfdbe-e976-45ec-83f3-d336ef3fc799",
+          "name": "List customer activities",
+          "request": {
+            "name": "List customer activities",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid",
+                "activities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77e4c42a-68c4-4db8-b3d8-58c18e0a63a5",
+              "name": "Activities",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid",
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15389e46-10eb-4fc7-8563-9181e459ec97",
+          "name": "List customer invoices",
+          "request": {
+            "name": "List customer invoices",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4569f700-429e-4e29-a6b0-3c0c762c5067",
+              "name": "Invoices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"invoices\": [\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"date\": \"1994-12-19T03:19:06.642Z\",\n      \"currency\": \"string\",\n      \"due_date\": \"1994-05-24T20:28:15.676Z\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"date\": \"1948-06-02T05:15:19.355Z\",\n      \"currency\": \"string\",\n      \"due_date\": \"1972-09-28T15:18:38.254Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f0f9edc4-56e0-400c-a069-5f429f2ee6bb",
+      "name": "Subscriptions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "76b8dfd9-adfc-4f43-9be3-139cf8c8d2ca",
+          "name": "List customer subscriptions",
+          "request": {
+            "name": "List customer subscriptions",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d0ddc0a-e4f1-4cff-8830-4aeffbe151d5",
+              "name": "Subscriptions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"plan_uuid\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"plan_uuid\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4447e241-0e87-4de3-a799-1249a39bfda9",
+      "name": "Invoices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ecf09460-d6f9-4d36-87fc-65291e44f718",
+          "name": "List invoices",
+          "request": {
+            "name": "List invoices",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6907878-4c80-4416-8f06-68a3db640fe6",
+              "name": "Invoices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"invoices\": [\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"date\": \"1994-12-19T03:19:06.642Z\",\n      \"currency\": \"string\",\n      \"due_date\": \"1994-05-24T20:28:15.676Z\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"date\": \"1948-06-02T05:15:19.355Z\",\n      \"currency\": \"string\",\n      \"due_date\": \"1972-09-28T15:18:38.254Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "519d484b-1ab3-46b2-a16c-6276f2301411",
+          "name": "Import invoices",
+          "request": {
+            "name": "Import invoices",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b87c5a26-4286-4dbf-9921-642e941ca4cd",
+              "name": "Imported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0fd3838-f5a8-492e-9295-e3cdeb743545",
+          "name": "Retrieve an invoice",
+          "request": {
+            "name": "Retrieve an invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55f8e424-dcac-49e9-8484-9980a4c6086b",
+              "name": "Invoice",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"external_id\": \"string\",\n  \"customer_uuid\": \"string\",\n  \"date\": \"1992-05-13T23:58:36.034Z\",\n  \"currency\": \"string\",\n  \"due_date\": \"1959-04-26T06:31:39.027Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f883c446-f974-4b3f-8abc-36678cb00f7b",
+          "name": "Update an invoice",
+          "request": {
+            "name": "Update an invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uuid\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"customer_uuid\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"currency\": \"<string>\",\n  \"due_date\": \"<dateTime>\",\n  \"line_items\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"transactions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c9a3f6f0-a01b-4323-8361-6e3b6f1c3ae7",
+              "name": "Updated invoice",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuid\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"customer_uuid\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"currency\": \"<string>\",\n  \"due_date\": \"<dateTime>\",\n  \"line_items\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"transactions\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"external_id\": \"string\",\n  \"customer_uuid\": \"string\",\n  \"date\": \"1992-05-13T23:58:36.034Z\",\n  \"currency\": \"string\",\n  \"due_date\": \"1959-04-26T06:31:39.027Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb3191a5-9199-417a-a393-52fac363176d",
+          "name": "Delete an invoice",
+          "request": {
+            "name": "Delete an invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "009cfe32-8424-4416-bfe3-5e34c6afd9a7",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d3e55566-74be-4ce7-8cad-9064b9da31d6",
+      "name": "Plans",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "608a0fea-25c4-4a4b-a87c-313c6f5e42f2",
+          "name": "List plans",
+          "request": {
+            "name": "List plans",
+            "description": {},
+            "url": {
+              "path": [
+                "plans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6bc220e-f8da-446f-b658-06c7ddc67a08",
+              "name": "Plans",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "plans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"plans\": [\n    {\n      \"uuid\": \"string\",\n      \"data_source_uuid\": \"string\",\n      \"name\": \"string\",\n      \"interval_count\": 6088,\n      \"interval_unit\": \"year\",\n      \"external_id\": \"string\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"data_source_uuid\": \"string\",\n      \"name\": \"string\",\n      \"interval_count\": 2357,\n      \"interval_unit\": \"month\",\n      \"external_id\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c0f8b1f-cae4-4728-84f7-ae3cc841bf65",
+          "name": "Create a plan",
+          "request": {
+            "name": "Create a plan",
+            "description": {},
+            "url": {
+              "path": [
+                "plans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uuid\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"interval_count\": \"<integer>\",\n  \"interval_unit\": \"<string>\",\n  \"external_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c00b0b6d-0b95-42e5-a4f8-49ad5fc3f1c4",
+              "name": "Plan created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "plans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuid\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"interval_count\": \"<integer>\",\n  \"interval_unit\": \"<string>\",\n  \"external_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"data_source_uuid\": \"string\",\n  \"name\": \"string\",\n  \"interval_count\": 1980,\n  \"interval_unit\": \"year\",\n  \"external_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7fabfed-57e1-4912-9344-04bac73e905b",
+          "name": "Retrieve a plan",
+          "request": {
+            "name": "Retrieve a plan",
+            "description": {},
+            "url": {
+              "path": [
+                "plans",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b954e514-5f45-4291-b5f5-536d6764e9b9",
+              "name": "Plan",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "plans",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"data_source_uuid\": \"string\",\n  \"name\": \"string\",\n  \"interval_count\": 1980,\n  \"interval_unit\": \"year\",\n  \"external_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "64917813-aca7-4613-955a-cf95621caeae",
+          "name": "Update a plan",
+          "request": {
+            "name": "Update a plan",
+            "description": {},
+            "url": {
+              "path": [
+                "plans",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uuid\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"interval_count\": \"<integer>\",\n  \"interval_unit\": \"<string>\",\n  \"external_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7b2549b-2014-46af-9d57-a25cc6db79e4",
+              "name": "Updated plan",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "plans",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uuid\": \"<string>\",\n  \"data_source_uuid\": \"<string>\",\n  \"name\": \"<string>\",\n  \"interval_count\": \"<integer>\",\n  \"interval_unit\": \"<string>\",\n  \"external_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"data_source_uuid\": \"string\",\n  \"name\": \"string\",\n  \"interval_count\": 1980,\n  \"interval_unit\": \"year\",\n  \"external_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c334b5b-8cdf-434c-849b-f6cff04a8555",
+          "name": "Delete a plan",
+          "request": {
+            "name": "Delete a plan",
+            "description": {},
+            "url": {
+              "path": [
+                "plans",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bccd3466-5a86-40fa-a0ed-01a3bab5dc48",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "plans",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a8e3b27a-646d-40ce-ac31-982ac5023252",
+      "name": "Metrics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "43b91aa7-a9c2-4bf6-95bb-e1b9bbacaad8",
+          "name": "Retrieve all key metrics",
+          "request": {
+            "name": "Retrieve all key metrics",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start-date",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "end-date",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "interval",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c43c7e7-baab-4a82-ba55-d5b454190081",
+              "name": "Metrics series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start-date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "end-date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "interval",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcc55aee-296d-42af-afaa-6a211b14231d",
+          "name": "Retrieve MRR",
+          "request": {
+            "name": "Retrieve MRR",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "mrr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db6b45e3-7e15-4a03-90bd-c1c86c514714",
+              "name": "MRR series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "mrr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4697861c-03e0-44ed-9d33-25d24a875380",
+          "name": "Retrieve ARR",
+          "request": {
+            "name": "Retrieve ARR",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "arr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47f5f78d-f319-412a-9622-c3391d03a40e",
+              "name": "ARR series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "arr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9da9c34-2b41-403e-bf82-552688441f3b",
+          "name": "Retrieve ARPA",
+          "request": {
+            "name": "Retrieve ARPA",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "arpa"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "421d1a78-ed00-4e03-bed7-288fa978edeb",
+              "name": "ARPA series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "arpa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c8cf0df-97f7-4f18-93dd-9a5516e1164e",
+          "name": "Customer count",
+          "request": {
+            "name": "Customer count",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "customer-count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2e14fd0-e3fc-45c6-b66a-2b47fd5c84a3",
+              "name": "Customer count series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "customer-count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef6deda5-85a9-4346-ba31-46e71252919b",
+          "name": "Customer churn rate",
+          "request": {
+            "name": "Customer churn rate",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "churn-rate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "916b50ba-f97f-4843-82ea-006444a3acaf",
+              "name": "Churn rate series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "churn-rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "085a3c64-79f4-4a98-82d1-9e10ff15523b",
+          "name": "MRR churn rate",
+          "request": {
+            "name": "MRR churn rate",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "mrr-churn-rate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28968b86-c068-4c01-9807-3ef832986451",
+              "name": "MRR churn rate series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "mrr-churn-rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7d1e6ae-9888-4d62-b5d0-d86da1a352bd",
+          "name": "Lifetime value",
+          "request": {
+            "name": "Lifetime value",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "ltv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6ef551a-716f-4a0c-865e-932ada382e6f",
+              "name": "LTV series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "ltv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1960-07-06\",\n      \"mrr\": 8611.650301772244,\n      \"arr\": 591.5917785976987,\n      \"customer-churn-rate\": 6963.07695605263,\n      \"mrr-churn-rate\": 8962.048571800813,\n      \"ltv\": 3743.6760687042793,\n      \"customers\": 4451,\n      \"asp\": 8987.797328140568,\n      \"arpa\": 6623.143416789643\n    },\n    {\n      \"date\": \"1976-03-19\",\n      \"mrr\": 2637.170744341065,\n      \"arr\": 1833.078245369052,\n      \"customer-churn-rate\": 9334.531881161654,\n      \"mrr-churn-rate\": 102.1563365945477,\n      \"ltv\": 7706.422069038881,\n      \"customers\": 5480,\n      \"asp\": 8866.57147382724,\n      \"arpa\": 6731.156418290614\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chartmogul.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "735cbd39-a376-450b-ba72-702c084e8c13",
+    "name": "ChartMogul REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ChartMogul REST API for importing customers, subscriptions, plans,\ninvoices, and transactions, and for reading subscription analytics\nmetrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic\nAuth with your API key as the username and an empty password.\n\n\nContact Support:\n Name: ChartMogul Developer Docs",
+      "type": "text/plain"
+    }
+  }
+}

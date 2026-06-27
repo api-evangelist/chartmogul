@@ -82,7 +82,7 @@ common:
     url: https://dev.chartmogul.com/docs/introduction
   - type: Pricing
     url: https://chartmogul.com/pricing
-  - type: SignUp
+  - type: Signup
     url: https://app.chartmogul.com/sign_up
   - type: GitHubOrganization
     url: https://github.com/chartmogul

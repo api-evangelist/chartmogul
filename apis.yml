@@ -74,6 +74,14 @@ apis:
         url: https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/openapi/chartmogul-asyncapi.yml
 
 common:
+  - type: TrustCenter
+    url: security/chartmogul-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/chartmogul-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/chartmogul-domain-security.yml
+  - type: Authentication
+    url: authentication/chartmogul-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/chartmogul
   - type: Website
@@ -89,6 +97,8 @@ common:
   - name: MCP Server
     url: https://github.com/chartmogul/chartmogul-mcp-server
     type: MCPServer
+  - url: https://chartmogul.com/blog/feed.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

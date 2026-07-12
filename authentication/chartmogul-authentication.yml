@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/chartmogul-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic Auth. Username is your ChartMogul API key; password is empty.
+  sources:
+  - openapi/chartmogul-openapi.yml

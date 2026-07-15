@@ -74,6 +74,8 @@ apis:
         url: https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/openapi/chartmogul-asyncapi.yml
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/chartmogul-agentic-access.yml
   - type: TrustCenter
     url: security/chartmogul-trust-center.yml
   - type: VulnerabilityDisclosure

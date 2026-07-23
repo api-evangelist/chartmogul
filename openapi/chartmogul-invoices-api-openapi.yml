@@ -1,0 +1,138 @@
+openapi: 3.1.0
+info:
+  title: ChartMogul REST Account Invoices API
+  version: '1'
+  description: 'ChartMogul REST API for importing customers, subscriptions, plans,
+
+    invoices, and transactions, and for reading subscription analytics
+
+    metrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic
+
+    Auth with your API key as the username and an empty password.
+
+    '
+  contact:
+    name: ChartMogul Developer Docs
+    url: https://dev.chartmogul.com/docs/introduction
+servers:
+- url: https://api.chartmogul.com/v1
+security:
+- basicAuth: []
+tags:
+- name: Invoices
+paths:
+  /invoices:
+    get:
+      tags:
+      - Invoices
+      summary: List invoices
+      operationId: listInvoices
+      responses:
+        '200':
+          description: Invoices
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceList'
+    post:
+      tags:
+      - Invoices
+      summary: Import invoices
+      operationId: importInvoices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Imported
+          content:
+            application/json:
+              schema:
+                type: object
+  /invoices/{uuid}:
+    parameters:
+    - in: path
+      name: uuid
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Invoices
+      summary: Retrieve an invoice
+      operationId: retrieveInvoice
+      responses:
+        '200':
+          description: Invoice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+    patch:
+      tags:
+      - Invoices
+      summary: Update an invoice
+      operationId: updateInvoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+      responses:
+        '200':
+          description: Updated invoice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+    delete:
+      tags:
+      - Invoices
+      summary: Delete an invoice
+      operationId: deleteInvoice
+      responses:
+        '204':
+          description: Deleted
+components:
+  schemas:
+    Invoice:
+      type: object
+      properties:
+        uuid:
+          type: string
+        external_id:
+          type: string
+        customer_uuid:
+          type: string
+        date:
+          type: string
+          format: date-time
+        currency:
+          type: string
+        due_date:
+          type: string
+          format: date-time
+        line_items:
+          type: array
+          items:
+            type: object
+        transactions:
+          type: array
+          items:
+            type: object
+    InvoiceList:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth. Username is your ChartMogul API key; password is empty.

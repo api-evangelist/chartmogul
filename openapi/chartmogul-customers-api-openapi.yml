@@ -1,0 +1,238 @@
+openapi: 3.1.0
+info:
+  title: ChartMogul REST Account Customers API
+  version: '1'
+  description: 'ChartMogul REST API for importing customers, subscriptions, plans,
+
+    invoices, and transactions, and for reading subscription analytics
+
+    metrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic
+
+    Auth with your API key as the username and an empty password.
+
+    '
+  contact:
+    name: ChartMogul Developer Docs
+    url: https://dev.chartmogul.com/docs/introduction
+servers:
+- url: https://api.chartmogul.com/v1
+security:
+- basicAuth: []
+tags:
+- name: Customers
+paths:
+  /customers:
+    get:
+      tags:
+      - Customers
+      summary: List customers
+      operationId: listCustomers
+      parameters:
+      - in: query
+        name: page
+        schema:
+          type: integer
+      - in: query
+        name: per_page
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Paged list of customers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerList'
+    post:
+      tags:
+      - Customers
+      summary: Create a customer
+      operationId: createCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Customer created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /customers/{uuid}:
+    parameters:
+    - in: path
+      name: uuid
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Customers
+      summary: Retrieve a customer
+      operationId: retrieveCustomer
+      responses:
+        '200':
+          description: Customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+    patch:
+      tags:
+      - Customers
+      summary: Update a customer
+      operationId: updateCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: Updated customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+    delete:
+      tags:
+      - Customers
+      summary: Delete a customer
+      operationId: deleteCustomer
+      responses:
+        '204':
+          description: Deleted
+  /customers/email/{email}:
+    parameters:
+    - in: path
+      name: email
+      required: true
+      schema:
+        type: string
+        format: email
+    get:
+      tags:
+      - Customers
+      summary: List customers by email
+      operationId: listCustomersByEmail
+      responses:
+        '200':
+          description: Customers matching the email
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerList'
+  /customers/{uuid}/activities:
+    parameters:
+    - in: path
+      name: uuid
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Customers
+      summary: List customer activities
+      operationId: listCustomerActivities
+      responses:
+        '200':
+          description: Activities
+          content:
+            application/json:
+              schema:
+                type: object
+  /customers/{uuid}/invoices:
+    parameters:
+    - in: path
+      name: uuid
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Customers
+      summary: List customer invoices
+      operationId: listCustomerInvoices
+      responses:
+        '200':
+          description: Invoices
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceList'
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        uuid:
+          type: string
+        external_id:
+          type: string
+        data_source_uuid:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        company:
+          type: string
+        country:
+          type: string
+        city:
+          type: string
+    CustomerList:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
+        has_more:
+          type: boolean
+        per_page:
+          type: integer
+        page:
+          type: integer
+    Invoice:
+      type: object
+      properties:
+        uuid:
+          type: string
+        external_id:
+          type: string
+        customer_uuid:
+          type: string
+        date:
+          type: string
+          format: date-time
+        currency:
+          type: string
+        due_date:
+          type: string
+          format: date-time
+        line_items:
+          type: array
+          items:
+            type: object
+        transactions:
+          type: array
+          items:
+            type: object
+    InvoiceList:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth. Username is your ChartMogul API key; password is empty.

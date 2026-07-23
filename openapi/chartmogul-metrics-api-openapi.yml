@@ -1,0 +1,186 @@
+openapi: 3.1.0
+info:
+  title: ChartMogul REST Account Metrics API
+  version: '1'
+  description: 'ChartMogul REST API for importing customers, subscriptions, plans,
+
+    invoices, and transactions, and for reading subscription analytics
+
+    metrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic
+
+    Auth with your API key as the username and an empty password.
+
+    '
+  contact:
+    name: ChartMogul Developer Docs
+    url: https://dev.chartmogul.com/docs/introduction
+servers:
+- url: https://api.chartmogul.com/v1
+security:
+- basicAuth: []
+tags:
+- name: Metrics
+paths:
+  /metrics/all:
+    get:
+      tags:
+      - Metrics
+      summary: Retrieve all key metrics
+      operationId: getAllMetrics
+      parameters:
+      - in: query
+        name: start-date
+        required: true
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: end-date
+        required: true
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: interval
+        schema:
+          type: string
+          enum:
+          - day
+          - week
+          - month
+          - quarter
+          - year
+      responses:
+        '200':
+          description: Metrics series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/mrr:
+    get:
+      tags:
+      - Metrics
+      summary: Retrieve MRR
+      operationId: getMrr
+      responses:
+        '200':
+          description: MRR series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/arr:
+    get:
+      tags:
+      - Metrics
+      summary: Retrieve ARR
+      operationId: getArr
+      responses:
+        '200':
+          description: ARR series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/arpa:
+    get:
+      tags:
+      - Metrics
+      summary: Retrieve ARPA
+      operationId: getArpa
+      responses:
+        '200':
+          description: ARPA series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/customer-count:
+    get:
+      tags:
+      - Metrics
+      summary: Customer count
+      operationId: getCustomerCount
+      responses:
+        '200':
+          description: Customer count series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/churn-rate:
+    get:
+      tags:
+      - Metrics
+      summary: Customer churn rate
+      operationId: getChurnRate
+      responses:
+        '200':
+          description: Churn rate series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/mrr-churn-rate:
+    get:
+      tags:
+      - Metrics
+      summary: MRR churn rate
+      operationId: getMrrChurnRate
+      responses:
+        '200':
+          description: MRR churn rate series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+  /metrics/ltv:
+    get:
+      tags:
+      - Metrics
+      summary: Lifetime value
+      operationId: getLtv
+      responses:
+        '200':
+          description: LTV series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsSeries'
+components:
+  schemas:
+    MetricsSeries:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+              mrr:
+                type: number
+              arr:
+                type: number
+              customer-churn-rate:
+                type: number
+              mrr-churn-rate:
+                type: number
+              ltv:
+                type: number
+              customers:
+                type: integer
+              asp:
+                type: number
+              arpa:
+                type: number
+        summary:
+          type: object
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth. Username is your ChartMogul API key; password is empty.

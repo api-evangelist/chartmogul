@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: ChartMogul REST Account Plans API
+  version: '1'
+  description: 'ChartMogul REST API for importing customers, subscriptions, plans,
+
+    invoices, and transactions, and for reading subscription analytics
+
+    metrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic
+
+    Auth with your API key as the username and an empty password.
+
+    '
+  contact:
+    name: ChartMogul Developer Docs
+    url: https://dev.chartmogul.com/docs/introduction
+servers:
+- url: https://api.chartmogul.com/v1
+security:
+- basicAuth: []
+tags:
+- name: Plans
+paths:
+  /plans:
+    get:
+      tags:
+      - Plans
+      summary: List plans
+      operationId: listPlans
+      responses:
+        '200':
+          description: Plans
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plans:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Plan'
+    post:
+      tags:
+      - Plans
+      summary: Create a plan
+      operationId: createPlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Plan'
+      responses:
+        '201':
+          description: Plan created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+  /plans/{uuid}:
+    parameters:
+    - in: path
+      name: uuid
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Plans
+      summary: Retrieve a plan
+      operationId: retrievePlan
+      responses:
+        '200':
+          description: Plan
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+    patch:
+      tags:
+      - Plans
+      summary: Update a plan
+      operationId: updatePlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Plan'
+      responses:
+        '200':
+          description: Updated plan
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+    delete:
+      tags:
+      - Plans
+      summary: Delete a plan
+      operationId: deletePlan
+      responses:
+        '204':
+          description: Deleted
+components:
+  schemas:
+    Plan:
+      type: object
+      properties:
+        uuid:
+          type: string
+        data_source_uuid:
+          type: string
+        name:
+          type: string
+        interval_count:
+          type: integer
+        interval_unit:
+          type: string
+          enum:
+          - day
+          - month
+          - year
+        external_id:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth. Username is your ChartMogul API key; password is empty.

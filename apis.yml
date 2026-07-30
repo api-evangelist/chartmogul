@@ -8,7 +8,19 @@ description: >-
   subscriptions, invoices, transactions, and plans, and to read metrics,
   customer segments, and forecasts.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/chartmogul.png
 tags:
   - Subscription Analytics
   - SaaS Metrics
@@ -23,56 +35,112 @@ created: '2026-05-11'
 modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
-  - aid: chartmogul:rest-api
-    name: ChartMogul REST API
-    description: >-
-      REST API for ChartMogul providing endpoints for importing customers,
-      subscriptions, plans, invoices, and transactions, plus reading SaaS
-      metrics (MRR, ARR, ARPA, churn, LTV), customer attributes, segments,
-      and forecasts. All requests are over HTTPS and authenticate via HTTP
-      Basic Auth using an API key as the username.
-    humanURL: https://dev.chartmogul.com/docs/introduction
-    baseURL: https://api.chartmogul.com
-    tags:
-      - Subscription Analytics
-      - SaaS Metrics
-      - Import API
-      - Metrics API
-      - Customers
-      - Subscriptions
-      - Invoices
-      - Basic Auth
-    properties:
-      - type: Documentation
-        url: https://dev.chartmogul.com/docs/introduction
-      - type: Authentication
-        url: https://dev.chartmogul.com/docs/authentication
-      - type: GettingStarted
-        url: https://help.chartmogul.com/hc/en-us/articles/207413269-Getting-started-with-our-API
-      - type: GitHub SDK
-        url: https://github.com/chartmogul
-
-  - aid: chartmogul:webhooks
-    name: ChartMogul Webhooks
-    description: >-
-      Outbound webhook destination for ChartMogul. ChartMogul POSTs JSON
-      event bodies to a subscriber-configured HTTPS endpoint whenever a
-      customer-level MRR movement is recorded. Only the `mrr_movement`
-      event type is documented; movement_type categorizes the event as
-      new_biz, churn, expansion, contraction, or reactivation.
-    humanURL: https://dev.chartmogul.com/docs/destinations/webhooks
-    tags:
-      - Webhooks
-      - Events
-      - AsyncAPI
-      - MRR Movement
-      - Subscription Analytics
-    properties:
-      - type: Documentation
-        url: https://dev.chartmogul.com/docs/destinations/webhooks
-      - type: AsyncAPI
-        url: https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/openapi/chartmogul-asyncapi.yml
-
+- aid: chartmogul:rest-api
+  name: ChartMogul REST API
+  description: >-
+    REST API for ChartMogul providing endpoints for importing customers, subscriptions, plans, invoices,
+    and transactions, plus reading SaaS metrics (MRR, ARR, ARPA, churn, LTV), customer attributes, segments,
+    and forecasts. All requests are over HTTPS and authenticate via HTTP Basic Auth using an API key as
+    the username.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Subscription Analytics
+  - SaaS Metrics
+  - Import API
+  - Metrics API
+  - Customers
+  - Subscriptions
+  - Invoices
+  - Basic Auth
+  properties:
+  - type: Documentation
+    url: https://dev.chartmogul.com/docs/introduction
+  - type: Authentication
+    url: https://dev.chartmogul.com/docs/authentication
+  - type: GettingStarted
+    url: https://help.chartmogul.com/hc/en-us/articles/207413269-Getting-started-with-our-API
+  - type: GitHub SDK
+    url: https://github.com/chartmogul
+- aid: chartmogul:webhooks
+  name: ChartMogul Webhooks
+  description: >-
+    Outbound webhook destination for ChartMogul. ChartMogul POSTs JSON event bodies to a subscriber-configured
+    HTTPS endpoint whenever a customer-level MRR movement is recorded. Only the `mrr_movement` event type
+    is documented; movement_type categorizes the event as new_biz, churn, expansion, contraction, or reactivation.
+  humanURL: https://dev.chartmogul.com/docs/destinations/webhooks
+  tags:
+  - Webhooks
+  - Events
+  - AsyncAPI
+  - MRR Movement
+  - Subscription Analytics
+  properties:
+  - type: Documentation
+    url: https://dev.chartmogul.com/docs/destinations/webhooks
+  - type: AsyncAPI
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/openapi/chartmogul-asyncapi.yml
+- aid: chartmogul:chartmogul-account-api
+  name: ChartMogul Account API
+  description: The Account API from ChartMogul — 1 operation(s) for account.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/chartmogul-account-api-openapi.yml
+- aid: chartmogul:chartmogul-customers-api
+  name: ChartMogul Customers API
+  description: The Customers API from ChartMogul — 5 operation(s) for customers.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/chartmogul-customers-api-openapi.yml
+- aid: chartmogul:chartmogul-invoices-api
+  name: ChartMogul Invoices API
+  description: The Invoices API from ChartMogul — 2 operation(s) for invoices.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/chartmogul-invoices-api-openapi.yml
+- aid: chartmogul:chartmogul-metrics-api
+  name: ChartMogul Metrics API
+  description: The Metrics API from ChartMogul — 8 operation(s) for metrics.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/chartmogul-metrics-api-openapi.yml
+- aid: chartmogul:chartmogul-plans-api
+  name: ChartMogul Plans API
+  description: The Plans API from ChartMogul — 2 operation(s) for plans.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Plans
+  properties:
+  - type: OpenAPI
+    url: openapi/chartmogul-plans-api-openapi.yml
+- aid: chartmogul:chartmogul-subscriptions-api
+  name: ChartMogul Subscriptions API
+  description: The Subscriptions API from ChartMogul — 1 operation(s) for subscriptions.
+  humanURL: https://dev.chartmogul.com/docs/introduction
+  baseURL: https://api.chartmogul.com
+  tags:
+  - Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/chartmogul-subscriptions-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/chartmogul-agentic-access.yml

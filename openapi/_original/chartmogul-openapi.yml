@@ -1,0 +1,484 @@
+openapi: 3.1.0
+info:
+  title: ChartMogul REST API
+  version: "1"
+  description: |
+    ChartMogul REST API for importing customers, subscriptions, plans,
+    invoices, and transactions, and for reading subscription analytics
+    metrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic
+    Auth with your API key as the username and an empty password.
+  contact:
+    name: ChartMogul Developer Docs
+    url: https://dev.chartmogul.com/docs/introduction
+servers:
+  - url: https://api.chartmogul.com/v1
+security:
+  - basicAuth: []
+tags:
+  - name: Account
+  - name: Customers
+  - name: Subscriptions
+  - name: Invoices
+  - name: Plans
+  - name: Metrics
+paths:
+  /account:
+    get:
+      tags: [Account]
+      summary: Retrieve account
+      operationId: retrieveAccount
+      responses:
+        "200":
+          description: Account details
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Account" }
+  /customers:
+    get:
+      tags: [Customers]
+      summary: List customers
+      operationId: listCustomers
+      parameters:
+        - in: query
+          name: page
+          schema: { type: integer }
+        - in: query
+          name: per_page
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Paged list of customers
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/CustomerList" }
+    post:
+      tags: [Customers]
+      summary: Create a customer
+      operationId: createCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Customer" }
+      responses:
+        "201":
+          description: Customer created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Customer" }
+  /customers/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Customers]
+      summary: Retrieve a customer
+      operationId: retrieveCustomer
+      responses:
+        "200":
+          description: Customer
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Customer" }
+    patch:
+      tags: [Customers]
+      summary: Update a customer
+      operationId: updateCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Customer" }
+      responses:
+        "200":
+          description: Updated customer
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Customer" }
+    delete:
+      tags: [Customers]
+      summary: Delete a customer
+      operationId: deleteCustomer
+      responses:
+        "204": { description: Deleted }
+  /customers/email/{email}:
+    parameters:
+      - in: path
+        name: email
+        required: true
+        schema: { type: string, format: email }
+    get:
+      tags: [Customers]
+      summary: List customers by email
+      operationId: listCustomersByEmail
+      responses:
+        "200":
+          description: Customers matching the email
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/CustomerList" }
+  /customers/{uuid}/activities:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Customers]
+      summary: List customer activities
+      operationId: listCustomerActivities
+      responses:
+        "200":
+          description: Activities
+          content:
+            application/json:
+              schema: { type: object }
+  /customers/{uuid}/invoices:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Customers]
+      summary: List customer invoices
+      operationId: listCustomerInvoices
+      responses:
+        "200":
+          description: Invoices
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/InvoiceList" }
+  /customers/{uuid}/subscriptions:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Subscriptions]
+      summary: List customer subscriptions
+      operationId: listCustomerSubscriptions
+      responses:
+        "200":
+          description: Subscriptions
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/SubscriptionList" }
+  /invoices:
+    get:
+      tags: [Invoices]
+      summary: List invoices
+      operationId: listInvoices
+      responses:
+        "200":
+          description: Invoices
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/InvoiceList" }
+    post:
+      tags: [Invoices]
+      summary: Import invoices
+      operationId: importInvoices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Imported
+          content:
+            application/json:
+              schema: { type: object }
+  /invoices/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Invoices]
+      summary: Retrieve an invoice
+      operationId: retrieveInvoice
+      responses:
+        "200":
+          description: Invoice
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Invoice" }
+    patch:
+      tags: [Invoices]
+      summary: Update an invoice
+      operationId: updateInvoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Invoice" }
+      responses:
+        "200":
+          description: Updated invoice
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Invoice" }
+    delete:
+      tags: [Invoices]
+      summary: Delete an invoice
+      operationId: deleteInvoice
+      responses:
+        "204": { description: Deleted }
+  /plans:
+    get:
+      tags: [Plans]
+      summary: List plans
+      operationId: listPlans
+      responses:
+        "200":
+          description: Plans
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plans:
+                    type: array
+                    items: { $ref: "#/components/schemas/Plan" }
+    post:
+      tags: [Plans]
+      summary: Create a plan
+      operationId: createPlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Plan" }
+      responses:
+        "201":
+          description: Plan created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Plan" }
+  /plans/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Plans]
+      summary: Retrieve a plan
+      operationId: retrievePlan
+      responses:
+        "200":
+          description: Plan
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Plan" }
+    patch:
+      tags: [Plans]
+      summary: Update a plan
+      operationId: updatePlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Plan" }
+      responses:
+        "200":
+          description: Updated plan
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Plan" }
+    delete:
+      tags: [Plans]
+      summary: Delete a plan
+      operationId: deletePlan
+      responses:
+        "204": { description: Deleted }
+  /metrics/all:
+    get:
+      tags: [Metrics]
+      summary: Retrieve all key metrics
+      operationId: getAllMetrics
+      parameters:
+        - { in: query, name: start-date, required: true, schema: { type: string, format: date } }
+        - { in: query, name: end-date, required: true, schema: { type: string, format: date } }
+        - { in: query, name: interval, schema: { type: string, enum: [day, week, month, quarter, year] } }
+      responses:
+        "200":
+          description: Metrics series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/mrr:
+    get:
+      tags: [Metrics]
+      summary: Retrieve MRR
+      operationId: getMrr
+      responses:
+        "200":
+          description: MRR series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/arr:
+    get:
+      tags: [Metrics]
+      summary: Retrieve ARR
+      operationId: getArr
+      responses:
+        "200":
+          description: ARR series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/arpa:
+    get:
+      tags: [Metrics]
+      summary: Retrieve ARPA
+      operationId: getArpa
+      responses:
+        "200":
+          description: ARPA series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/customer-count:
+    get:
+      tags: [Metrics]
+      summary: Customer count
+      operationId: getCustomerCount
+      responses:
+        "200":
+          description: Customer count series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/churn-rate:
+    get:
+      tags: [Metrics]
+      summary: Customer churn rate
+      operationId: getChurnRate
+      responses:
+        "200":
+          description: Churn rate series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/mrr-churn-rate:
+    get:
+      tags: [Metrics]
+      summary: MRR churn rate
+      operationId: getMrrChurnRate
+      responses:
+        "200":
+          description: MRR churn rate series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+  /metrics/ltv:
+    get:
+      tags: [Metrics]
+      summary: Lifetime value
+      operationId: getLtv
+      responses:
+        "200":
+          description: LTV series
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricsSeries" }
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Auth. Username is your ChartMogul API key; password is empty.
+  schemas:
+    Account:
+      type: object
+      properties:
+        name: { type: string }
+        currency: { type: string }
+        time_zone: { type: string }
+        week_start_on: { type: string }
+    Customer:
+      type: object
+      properties:
+        uuid: { type: string }
+        external_id: { type: string }
+        data_source_uuid: { type: string }
+        name: { type: string }
+        email: { type: string, format: email }
+        company: { type: string }
+        country: { type: string }
+        city: { type: string }
+    CustomerList:
+      type: object
+      properties:
+        entries:
+          type: array
+          items: { $ref: "#/components/schemas/Customer" }
+        has_more: { type: boolean }
+        per_page: { type: integer }
+        page: { type: integer }
+    Subscription:
+      type: object
+      properties:
+        uuid: { type: string }
+        external_id: { type: string }
+        customer_uuid: { type: string }
+        plan_uuid: { type: string }
+        status: { type: string }
+    SubscriptionList:
+      type: object
+      properties:
+        entries:
+          type: array
+          items: { $ref: "#/components/schemas/Subscription" }
+    Invoice:
+      type: object
+      properties:
+        uuid: { type: string }
+        external_id: { type: string }
+        customer_uuid: { type: string }
+        date: { type: string, format: date-time }
+        currency: { type: string }
+        due_date: { type: string, format: date-time }
+        line_items: { type: array, items: { type: object } }
+        transactions: { type: array, items: { type: object } }
+    InvoiceList:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items: { $ref: "#/components/schemas/Invoice" }
+    Plan:
+      type: object
+      properties:
+        uuid: { type: string }
+        data_source_uuid: { type: string }
+        name: { type: string }
+        interval_count: { type: integer }
+        interval_unit: { type: string, enum: [day, month, year] }
+        external_id: { type: string }
+    MetricsSeries:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            type: object
+            properties:
+              date: { type: string, format: date }
+              mrr: { type: number }
+              arr: { type: number }
+              customer-churn-rate: { type: number }
+              mrr-churn-rate: { type: number }
+              ltv: { type: number }
+              customers: { type: integer }
+              asp: { type: number }
+              arpa: { type: number }
+        summary: { type: object }

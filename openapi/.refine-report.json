@@ -1,0 +1,24 @@
+{
+  "provider": "chartmogul",
+  "sources": [
+    "chartmogul-account-api-openapi.yml",
+    "chartmogul-customers-api-openapi.yml",
+    "chartmogul-invoices-api-openapi.yml",
+    "chartmogul-metrics-api-openapi.yml",
+    "chartmogul-plans-api-openapi.yml",
+    "chartmogul-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "chartmogul-account-api-openapi.yml",
+    "chartmogul-customers-api-openapi.yml",
+    "chartmogul-invoices-api-openapi.yml",
+    "chartmogul-metrics-api-openapi.yml",
+    "chartmogul-plans-api-openapi.yml",
+    "chartmogul-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

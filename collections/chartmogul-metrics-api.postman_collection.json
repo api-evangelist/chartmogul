@@ -1,0 +1,692 @@
+{
+  "item": [
+    {
+      "id": "59e963bb-3c6a-4bc7-81a8-08655b8485d2",
+      "name": "Metrics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "971bd967-b910-40ae-97a5-8f20c747b5f8",
+          "name": "Retrieve all key metrics",
+          "request": {
+            "name": "Retrieve all key metrics",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start-date",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "end-date",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "interval",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "345aaace-fd82-4ef3-8344-df8b1fc47aaa",
+              "name": "Metrics series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start-date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "end-date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "interval",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db1a881a-16c8-4540-b142-55aad3228124",
+          "name": "Retrieve MRR",
+          "request": {
+            "name": "Retrieve MRR",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "mrr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ef49ac7-5403-4a9a-96b2-5d2f5bd8c0f7",
+              "name": "MRR series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "mrr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2de195cf-a177-4b81-9c6f-cb6f8a936f9f",
+          "name": "Retrieve ARR",
+          "request": {
+            "name": "Retrieve ARR",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "arr"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66380e30-ec2f-4cb9-a335-1738f42c73ff",
+              "name": "ARR series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "arr"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4af5edc-aa45-428c-a2fe-2bf1e4a60ccb",
+          "name": "Retrieve ARPA",
+          "request": {
+            "name": "Retrieve ARPA",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "arpa"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad68436c-ac9d-4ec1-b2b6-87e76b9fd88c",
+              "name": "ARPA series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "arpa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f4df722-b4a3-48c5-87e7-8abe84666547",
+          "name": "Customer count",
+          "request": {
+            "name": "Customer count",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "customer-count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e07cc76-0b71-4f77-a798-516f90ed1ec4",
+              "name": "Customer count series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "customer-count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e2cd3e0-d3dc-4985-bf04-6fee96388426",
+          "name": "Customer churn rate",
+          "request": {
+            "name": "Customer churn rate",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "churn-rate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3a392fd-be1d-4c93-9f8e-6988a4a7cb6d",
+              "name": "Churn rate series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "churn-rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de4aa351-a01e-4192-b02a-91133ac540e6",
+          "name": "MRR churn rate",
+          "request": {
+            "name": "MRR churn rate",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "mrr-churn-rate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04cd012d-791e-43c3-876f-334de7526b89",
+              "name": "MRR churn rate series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "mrr-churn-rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6127fe2a-b263-403f-88f3-49a3632cdb92",
+          "name": "Lifetime value",
+          "request": {
+            "name": "Lifetime value",
+            "description": {},
+            "url": {
+              "path": [
+                "metrics",
+                "ltv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2004b419-13cc-47ac-a8cf-feb45cf8600b",
+              "name": "LTV series",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metrics",
+                    "ltv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"date\": \"1983-12-09\",\n      \"mrr\": 7736.018241390709,\n      \"arr\": 3043.9666519771613,\n      \"customer-churn-rate\": 8112.161331104708,\n      \"mrr-churn-rate\": 6379.4850584821115,\n      \"ltv\": 5452.859702408942,\n      \"customers\": 8145,\n      \"asp\": 3324.4588059035996,\n      \"arpa\": 7794.369152778296\n    },\n    {\n      \"date\": \"2005-01-28\",\n      \"mrr\": 7587.940442681514,\n      \"arr\": 7968.437935071302,\n      \"customer-churn-rate\": 3805.0570102029146,\n      \"mrr-churn-rate\": 9438.189060671208,\n      \"ltv\": 257.75956272568345,\n      \"customers\": 7789,\n      \"asp\": 5647.453709602559,\n      \"arpa\": 4860.404854120405\n    }\n  ],\n  \"summary\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chartmogul.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4753dcc2-65c0-4e3c-a319-8bcafc54507a",
+    "name": "ChartMogul REST Account Metrics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ChartMogul REST API for importing customers, subscriptions, plans,\ninvoices, and transactions, and for reading subscription analytics\nmetrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic\nAuth with your API key as the username and an empty password.\n\n\nContact Support:\n Name: ChartMogul Developer Docs",
+      "type": "text/plain"
+    }
+  }
+}

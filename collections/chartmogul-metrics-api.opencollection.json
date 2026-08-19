@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ChartMogul REST Account Metrics API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all key metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/all",
+            "params": [
+              {
+                "name": "start-date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end-date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "interval",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all key metrics"
+        },
+        {
+          "info": {
+            "name": "Retrieve MRR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/mrr"
+          },
+          "docs": "Retrieve MRR"
+        },
+        {
+          "info": {
+            "name": "Retrieve ARR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/arr"
+          },
+          "docs": "Retrieve ARR"
+        },
+        {
+          "info": {
+            "name": "Retrieve ARPA",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/arpa"
+          },
+          "docs": "Retrieve ARPA"
+        },
+        {
+          "info": {
+            "name": "Customer count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/customer-count"
+          },
+          "docs": "Customer count"
+        },
+        {
+          "info": {
+            "name": "Customer churn rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/churn-rate"
+          },
+          "docs": "Customer churn rate"
+        },
+        {
+          "info": {
+            "name": "MRR churn rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/mrr-churn-rate"
+          },
+          "docs": "MRR churn rate"
+        },
+        {
+          "info": {
+            "name": "Lifetime value",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chartmogul.com/v1/metrics/ltv"
+          },
+          "docs": "Lifetime value"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

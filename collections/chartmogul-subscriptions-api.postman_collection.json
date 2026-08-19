@@ -1,0 +1,140 @@
+{
+  "item": [
+    {
+      "id": "8d819e69-8eea-4d7d-84ab-934b3bfc8769",
+      "name": "Subscriptions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15b5fda0-75cd-4273-b058-cf016727672d",
+          "name": "List customer subscriptions",
+          "request": {
+            "name": "List customer subscriptions",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":uuid",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a01c444b-51ab-4429-9642-4e88a7531e55",
+              "name": "Subscriptions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":uuid",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"plan_uuid\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"uuid\": \"string\",\n      \"external_id\": \"string\",\n      \"customer_uuid\": \"string\",\n      \"plan_uuid\": \"string\",\n      \"status\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chartmogul.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1485cf3d-22a4-4ea9-bcc4-71176d01aed1",
+    "name": "ChartMogul REST Account Subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ChartMogul REST API for importing customers, subscriptions, plans,\ninvoices, and transactions, and for reading subscription analytics\nmetrics (MRR, ARR, ARPA, churn, LTV). Authentication uses HTTP Basic\nAuth with your API key as the username and an empty password.\n\n\nContact Support:\n Name: ChartMogul Developer Docs",
+      "type": "text/plain"
+    }
+  }
+}

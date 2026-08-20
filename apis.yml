@@ -50,6 +50,15 @@ apis:
   - Import API
   - Metrics API
   - Customers
+  - Subscription
+  - Invoices
+  - Basic Auth
+  tags_raw:
+  - Subscription Analytics
+  - SaaS Metrics
+  - Import API
+  - Metrics API
+  - Customers
   - Subscriptions
   - Invoices
   - Basic Auth
@@ -70,6 +79,12 @@ apis:
     is documented; movement_type categorizes the event as new_biz, churn, expansion, contraction, or reactivation.
   humanURL: https://dev.chartmogul.com/docs/destinations/webhooks
   tags:
+  - Webhook
+  - Event
+  - AsyncAPI
+  - MRR Movement
+  - Subscription Analytics
+  tags_raw:
   - Webhooks
   - Events
   - AsyncAPI
@@ -137,6 +152,8 @@ apis:
   humanURL: https://dev.chartmogul.com/docs/introduction
   baseURL: https://api.chartmogul.com
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI

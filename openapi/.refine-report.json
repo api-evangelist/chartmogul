@@ -1,12 +1,7 @@
 {
   "provider": "chartmogul",
   "sources": [
-    "chartmogul-account-api-openapi.yml",
-    "chartmogul-customers-api-openapi.yml",
-    "chartmogul-invoices-api-openapi.yml",
-    "chartmogul-metrics-api-openapi.yml",
-    "chartmogul-plans-api-openapi.yml",
-    "chartmogul-subscriptions-api-openapi.yml"
+    "_original/chartmogul-openapi.yml"
   ],
   "outputs": [
     "chartmogul-account-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "chartmogul-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "chartmogul-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chartmogul-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chartmogul-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chartmogul-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chartmogul-plans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chartmogul-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

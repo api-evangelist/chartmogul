@@ -164,26 +164,6 @@ paths:
                 $ref: '#/components/schemas/InvoiceList'
 components:
   schemas:
-    Customer:
-      type: object
-      properties:
-        uuid:
-          type: string
-        external_id:
-          type: string
-        data_source_uuid:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        company:
-          type: string
-        country:
-          type: string
-        city:
-          type: string
     Invoice:
       type: object
       properties:
@@ -209,6 +189,13 @@ components:
           type: array
           items:
             type: object
+    InvoiceList:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
     CustomerList:
       type: object
       properties:
@@ -222,13 +209,26 @@ components:
           type: integer
         page:
           type: integer
-    InvoiceList:
+    Customer:
       type: object
       properties:
-        invoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/Invoice'
+        uuid:
+          type: string
+        external_id:
+          type: string
+        data_source_uuid:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        company:
+          type: string
+        country:
+          type: string
+        city:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

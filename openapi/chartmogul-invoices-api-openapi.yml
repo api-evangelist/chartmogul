@@ -97,6 +97,13 @@ paths:
           description: Deleted
 components:
   schemas:
+    InvoiceList:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
     Invoice:
       type: object
       properties:
@@ -122,13 +129,6 @@ components:
           type: array
           items:
             type: object
-    InvoiceList:
-      type: object
-      properties:
-        invoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/Invoice'
   securitySchemes:
     basicAuth:
       type: http

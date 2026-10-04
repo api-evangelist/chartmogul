@@ -40,13 +40,6 @@ paths:
                 $ref: '#/components/schemas/SubscriptionList'
 components:
   schemas:
-    SubscriptionList:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Subscription'
     Subscription:
       type: object
       properties:
@@ -60,6 +53,13 @@ components:
           type: string
         status:
           type: string
+    SubscriptionList:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subscription'
   securitySchemes:
     basicAuth:
       type: http

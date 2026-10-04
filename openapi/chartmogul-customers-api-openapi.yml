@@ -164,6 +164,26 @@ paths:
                 $ref: '#/components/schemas/InvoiceList'
 components:
   schemas:
+    InvoiceList:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
+    CustomerList:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
+        has_more:
+          type: boolean
+        per_page:
+          type: integer
+        page:
+          type: integer
     Invoice:
       type: object
       properties:
@@ -189,26 +209,6 @@ components:
           type: array
           items:
             type: object
-    InvoiceList:
-      type: object
-      properties:
-        invoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/Invoice'
-    CustomerList:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Customer'
-        has_more:
-          type: boolean
-        per_page:
-          type: integer
-        page:
-          type: integer
     Customer:
       type: object
       properties:

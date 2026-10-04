@@ -1,0 +1,35 @@
+slug: chartmogul
+provider: ChartMogul
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Metrics
+  spec_file: chartmogul-metrics-api-openapi.yml
+  capability_id: BC-4250.70
+  capability_id_l1: BC-4250
+  capability_name: Subscription Revenue Analytics
+  confidence: 0.95
+  evidence: '"GET /metrics/mrr getMrr", "GET /metrics/mrr-churn-rate", "GET /metrics/ltv Lifetime value",
+    "GET /metrics/arr"'
+  reason: The operations return MRR, ARR, ARPA, churn rate and LTV — exactly the recurring-revenue health
+    metrics of Subscription Revenue Analytics. No other reading fits.
+- tag: Invoices
+  spec_file: chartmogul-invoices-api-openapi.yml
+  capability_id: BC-4250
+  capability_id_l1: BC-4250
+  capability_name: Subscription Billing & Revenue Management
+  confidence: 0.7
+  evidence: '"POST /invoices importInvoices Import invoices"; schema "Invoice"'
+  reason: Subscription invoice artefacts are ingested and maintained here, placing the tag inside Subscription
+    Billing & Revenue Management. Left at L1 because ChartMogul imports invoices for analysis rather than
+    generating or delivering them, so Invoicing & Statement Management is not cleanly evidenced.

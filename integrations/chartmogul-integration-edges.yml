@@ -66,11 +66,29 @@ edges:
       - update or create
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: Stripe (own)
+  partner: stripe
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.stripe.com/apps/chartmogul
+  mirror_of: stripe/integrations/stripe-integration-edges.yml
+  apps:
+  - ChartMogul
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: data_and_analytics
 method: searched
 checked:
 - https://fivetran.com/docs/activations/destinations/available-destinations/chartmogul
 - https://hightouch.com/docs/destinations/chartmogul
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/actions-chartmogul
+- stripe/integrations/stripe-integration-edges.yml
 source:
 - https://fivetran.com/docs/activations/destinations/available-destinations/chartmogul
 - https://hightouch.com/docs/destinations/chartmogul

@@ -1,4 +1,4 @@
-# ChartMogul (chartmogul)
+# ChartMogul
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,88 +66,123 @@
 
 ChartMogul is a subscription analytics platform for SaaS companies that unifies billing data, customer information, and revenue analytics into one real-time view of MRR, churn, LTV, cohorts, and growth trends. The ChartMogul REST API provides programmatic access to import customers, subscriptions, invoices, transactions, and plans, and to read metrics, customer segments, and forecasts.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/apis.yml)
+**Areas:** Subscription Analytics · SaaS Metrics · Revenue Analytics · MRR · Churn · Cohorts · Billing
 
-## Scope
+## ChartMogul on APIs.io
 
-- **Type:** Index
+Everything profiled for ChartMogul is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/chartmogul/](https://apis.io/providers/chartmogul/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Subscription Analytics
-- SaaS Metrics
-- Revenue Analytics
-- MRR
-- Churn
-- Cohorts
-- Billing
+- [ChartMogul REST API](https://apis.io/apis/chartmogul/rest-api/) — REST API for ChartMogul providing endpoints for importing customers, subscriptions, plans, invoices, and transactions, plus reading SaaS metrics (MRR, ARR,…
+- [ChartMogul Webhooks](https://apis.io/apis/chartmogul/webhooks/) — Outbound webhook destination for ChartMogul. ChartMogul POSTs JSON event bodies to a subscriber-configured HTTPS endpoint whenever a customer-level MRR…
+- [ChartMogul Account API](https://apis.io/apis/chartmogul/chartmogul-account-api/) — The Account API from ChartMogul — 1 operation(s) for account.
+- [ChartMogul Customers API](https://apis.io/apis/chartmogul/chartmogul-customers-api/) — The Customers API from ChartMogul — 5 operation(s) for customers.
+- [ChartMogul Invoices API](https://apis.io/apis/chartmogul/chartmogul-invoices-api/) — The Invoices API from ChartMogul — 2 operation(s) for invoices.
+- [ChartMogul Metrics API](https://apis.io/apis/chartmogul/chartmogul-metrics-api/) — The Metrics API from ChartMogul — 8 operation(s) for metrics.
+- [ChartMogul Plans API](https://apis.io/apis/chartmogul/chartmogul-plans-api/) — The Plans API from ChartMogul — 2 operation(s) for plans.
+- [ChartMogul Subscriptions API](https://apis.io/apis/chartmogul/chartmogul-subscriptions-api/) — The Subscriptions API from ChartMogul — 1 operation(s) for subscriptions.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-30
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (2)
 
-### ChartMogul REST API
+Model Context Protocol servers that expose the API to agents.
 
-REST API for ChartMogul providing endpoints for importing customers, subscriptions, plans, invoices, and transactions, plus reading SaaS metrics (MRR, ARR, ARPA, churn, LTV), customer attributes, segments, and forecasts. All requests are over HTTPS and authenticate via HTTP Basic Auth using an API key as the username.
+- [chartmogul](https://apis.io/servers/chartmogul/chartmogul/)
+- [MCP Server](https://apis.io/servers/chartmogul/mcp-server/)
 
-- **Human URL:** [https://dev.chartmogul.com/docs/introduction](https://dev.chartmogul.com/docs/introduction)
-- **Base URL:** `https://api.chartmogul.com`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Subscription Analytics
-- SaaS Metrics
-- Import API
-- Metrics API
-- Customers
-- Subscriptions
-- Invoices
-- Basic Auth
+- [Chartmogul Agentic Access](https://apis.io/agentic-access/chartmogul/chartmogul-agentic-access/)
 
-#### Properties
+#### Collections (8)
 
-- [Documentation](https://dev.chartmogul.com/docs/introduction)
-- [Authentication](https://dev.chartmogul.com/docs/authentication)
-- [Getting Started](https://help.chartmogul.com/hc/en-us/articles/207413269-Getting-started-with-our-API)
-- [Git Hub  S D K](https://github.com/chartmogul)
-- [Postman Collection](collections/chartmogul.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/chartmogul.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### ChartMogul Webhooks
+- [ChartMogul REST API](https://apis.io/collections/chartmogul/open-chartmogul/)
+- [ChartMogul REST Account API](https://apis.io/collections/chartmogul/open-chartmogul-account-api/)
+- [ChartMogul Webhooks AsyncAPI](https://apis.io/collections/chartmogul/open-chartmogul-asyncapi/)
+- [ChartMogul REST Account Customers API](https://apis.io/collections/chartmogul/open-chartmogul-customers-api/)
+- [ChartMogul REST Account Invoices API](https://apis.io/collections/chartmogul/open-chartmogul-invoices-api/)
+- [ChartMogul REST Account Metrics API](https://apis.io/collections/chartmogul/open-chartmogul-metrics-api/)
+- [ChartMogul REST Account Plans API](https://apis.io/collections/chartmogul/open-chartmogul-plans-api/)
+- [ChartMogul REST Account Subscriptions API](https://apis.io/collections/chartmogul/open-chartmogul-subscriptions-api/)
 
-Outbound webhook destination for ChartMogul. ChartMogul POSTs JSON event bodies to a subscriber-configured HTTPS endpoint whenever a customer-level MRR movement is recorded. Only the `mrr_movement` event type is documented; movement_type categorizes the event as new_biz, churn, expansion, contraction, or reactivation.
+#### Security (4)
 
-- **Human URL:** [https://dev.chartmogul.com/docs/destinations/webhooks](https://dev.chartmogul.com/docs/destinations/webhooks)
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Chartmogul Authentication](https://apis.io/security/chartmogul/chartmogul-authentication/)
+- [Chartmogul Domain Security](https://apis.io/security/chartmogul/chartmogul-domain-security/)
+- [Chartmogul Trust Center](https://apis.io/security/chartmogul/chartmogul-trust-center/)
+- [Chartmogul Vulnerability Disclosure](https://apis.io/security/chartmogul/chartmogul-vulnerability-disclosure/)
 
-- Webhooks
-- Events
-- AsyncAPI
-- MRR Movement
-- Subscription Analytics
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://dev.chartmogul.com/docs/destinations/webhooks)
-- [AsyncAPI](https://raw.githubusercontent.com/api-evangelist/chartmogul/refs/heads/main/openapi/chartmogul-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Postman Collection](collections/chartmogul.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/chartmogul.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/chartmogul)
 - [Website](https://chartmogul.com)
 - [Documentation](https://dev.chartmogul.com/docs/introduction)
 - [Pricing](https://chartmogul.com/pricing)
-- [Sign Up](https://app.chartmogul.com/sign_up)
-- [GitHub Organization](https://github.com/chartmogul)
-- [M C P Server](https://github.com/chartmogul/chartmogul-mcp-server)
+- [Blog](https://chartmogul.com/blog/feed.xml)
+- [GitHub](https://github.com/chartmogul)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.4** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 60.0 |
+| Contract quality | 56.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 31.6 |
+
+**Agent readiness 45.5** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/chartmogul/](https://apis.io/providers/chartmogul/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ChartMogul: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/chartmogul/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
